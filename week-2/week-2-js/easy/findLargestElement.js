@@ -6,7 +6,7 @@
 */
 
 function findLargestElement(numbers) {
-    if (numsbers.length === 0) {
+    if (numbers.length === 0) {
         return -1; // Return null if the array is empty
     }
 
