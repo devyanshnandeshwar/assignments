@@ -17,13 +17,13 @@ function isPalindrome(str) {
 
   while (left < right) {
     // convert both characters to lower case for case-insensitivity
-    if (if (filteredStr[left] !== filteredStr[right]) {
+    if (filteredStr[left] !== filteredStr[right]) {
       return false; // not a palindrome
     }
     left++;
     right--;
   }
-  
+
   return true;
 }
 

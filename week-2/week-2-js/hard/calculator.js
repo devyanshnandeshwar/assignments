@@ -48,9 +48,28 @@ class Calculator {
     return this.result;
   }
 
-  calculate(inputexpression) {
-    const temp = inputexpression;
+  calculate(inputExpression) {
+    const temp = inputExpression;
     const cleanedExpression = temp.replace(/\s+/g, ''); // Remove all spaces
+    const isValidExpression = /^[0-9+\-*/().]+$/.test(cleanedExpression); // Check for valid characters
+
+    if (!isValidExpression) {
+      throw new Error("Invalid expression: contains non-numerical characters.");
+    }
+
+    try {
+      this.result = eval(inputExpression); // Evaluate the expression
+    }
+    catch (error) {
+      throw new Error("Error evaluating expression: " + error.message);
+    }
+
+    if (this.result === Infinity) {
+      throw new Error("Cannot divide a number by 0.");
+    }
+
+    return this.result;
+  }
 }
 
 module.exports = Calculator;
