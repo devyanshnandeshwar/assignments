@@ -4,6 +4,26 @@
 */
 
 function isPalindrome(str) {
+  // normalize the string by removing spaces and special characters
+  let filteredStr = '';
+  for (let char of str) {
+    if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || (char >= '0' && char <= '9')) {
+      filteredStr += char.toLowerCase(); // convert to lower case for case-insensitivity
+    }
+  }
+  // two pointers approach
+  let left = 0 ;
+  let right = str.length - 1;
+
+  while (left < right) {
+    // convert both characters to lower case for case-insensitivity
+    if (if (filteredStr[left] !== filteredStr[right]) {
+      return false; // not a palindrome
+    }
+    left++;
+    right--;
+  }
+  
   return true;
 }
 

@@ -11,6 +11,27 @@
 */
 
 class Todo {
+  function add(todo) {
+    if (!todo || typeof todo !== 'string') {
+      throw new Error
+    }
+  }
+
+  function remove(indexOfTodo) {}
+
+  function update(index, updatedTodo) {}
+  
+  function getAll() {
+    return [];
+  }
+  
+  function get(indexOfTodo) {
+    return null;
+  }
+
+  function clear() {
+    // Clear the todo list
+  }
 
 }
 
