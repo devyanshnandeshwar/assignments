@@ -5,9 +5,17 @@
 */
 
 function isAnagram(str1, str2) {
-  let s1 = str1.toLowerCase().split('').sort().join('');
-  let s2 = str2.toLowerCase().split('').sort().join('');
-  return s1 === s2;
+  // Check if lengths are equal
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  // helper function to sort the characters in a string
+  function sortString(str) {
+    return str.toLowerCase().split('').sort().join('');
+  }
+  
+  // Compare sorted versions of both strings
+  return sortString(str1) === sortString(str2);
 }
 
 module.exports = isAnagram;

@@ -11,26 +11,55 @@
 */
 
 class Todo {
-  function add(todo) {
+  constructor() {
+    this.todos = [];
+  }
+
+  add(todo) {
     if (!todo || typeof todo !== 'string') {
-      throw new Error
+      throw new Error("Todo must not be a non-empty string");
+    }
+    
+    this.todos.push(todo);
+  }
+
+  remove(indexOfTodo) {
+    if (indexOfTodo < 0 || indexOfTodo >= this.todos.length) {
+      throw new Error('Invalid index');
+    }
+    else {
+      this.todos.splice(indexOfTodo, 1);
     }
   }
 
-  function remove(indexOfTodo) {}
-
-  function update(index, updatedTodo) {}
-  
-  function getAll() {
-    return [];
+  update(index, updatedTodo) {
+    if(index < 0 || index >= this.todos.length()) {
+      throw new Error('Invalid index');
+    }
+    else if(!updatedTodo || typeof updatesdTodo !== 'string') {
+      throw new Error('Todo must be a non-empty string');
+    }
+    else {
+      this.todos[index] = updatedTodo;
+    }
   }
   
-  function get(indexOfTodo) {
-    return null;
+  getAll() {
+    return this.todos;
+  }
+  
+  get(indexOfTodo) {
+    if(indexOfTodo < 0 || indexOfTodo >= this.todos.length) {
+      throw new Error('Invalid index');
+    }
+    else {
+      return this.todos[indexOfTodo];
+    }
   }
 
-  function clear() {
+  clear() {
     // Clear the todo list
+    this.todos = [];
   }
 
 }
