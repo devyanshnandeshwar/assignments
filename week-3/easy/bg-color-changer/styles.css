@@ -35,3 +35,12 @@ body {
     transform: scale(1.1);
     opacity: 0.9;
 }
+
+/* Specify colors */
+.red { background: red}
+.yellow {background: yellow; color: black}
+.black {background: black;}
+.purple {background: purple;}
+.green {background: green;}
+.blue {background: blue;}
+.default {background: coral; color: black}
